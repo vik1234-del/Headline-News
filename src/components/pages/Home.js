@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NewsItem from "../NewsItem";
-import Navbar from "../NavBar";
+// import Navbar from "../NavBar";
 import { useSearchContext } from "../SearchContext"; // Import the useSearchContext hook
 
 const Home = () => {
