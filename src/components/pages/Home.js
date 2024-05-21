@@ -1,4 +1,4 @@
-import React, { useEffect, useState, CSSProperties } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import NewsItem from "../NewsItem"; // Ensure the correct import path
 import ClockLoader from "react-spinners/ClipLoader";

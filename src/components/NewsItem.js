@@ -50,10 +50,10 @@ const NewsItemLink = styled.a`
   }
 `;
 
-const NewsItemDescription = styled.p`
-  font-size: 1em;
-  color: #333;
-`;
+// const NewsItemDescription = styled.p`
+//   font-size: 1em;
+//   color: #333;
+// `;
 
 const NewsItem = ({ source, title, description, url, urlToImage, author }) => {
   return (

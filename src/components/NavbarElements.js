@@ -1,6 +1,6 @@
 // import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 import RecyclingOutlinedIcon from "@mui/icons-material/RecyclingOutlined";

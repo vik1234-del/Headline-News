@@ -3,8 +3,6 @@ import {
   AnimatedNavbar,
   NavLink,
   NavMenu,
-  NavBtn,
-  NavBtnLink,
   WorldIcon,
   Flag,
   Home,
