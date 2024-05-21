@@ -97,7 +97,7 @@ export const NavBtn = styled.nav`
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 180px;
+  margin-left: 25%;
 `;
 
 export const Icon = styled(SearchIcon)`
