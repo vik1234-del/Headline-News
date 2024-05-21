@@ -1,12 +1,12 @@
 // import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 import RecyclingOutlinedIcon from "@mui/icons-material/RecyclingOutlined";
 import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
-import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
+import NightlifeIcon from "@mui/icons-material/Nightlife";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -30,17 +30,38 @@ export const Business = styled(BusinessCenterOutlinedIcon)`
   margin-right: 7px;
 `;
 
-export const Health = styled(LocalHospitalOutlinedIcon)`
+export const Lifestyle = styled(NightlifeIcon)`
   margin-right: 7px;
 `;
 
 export const Nav = styled.nav`
-  background: #34495e; /* Updated background color */
+  margin-bottom: 10px;
+  margin-top: 10px;
   height: 70px;
   display: flex;
   justify-content: space-between; /* Align items to the start and end */
   align-items: center; /* Vertically center items */
-  padding: 0 20px; /* Adjusted padding */
+  padding: 0 50px; /* Adjusted padding */
+`;
+export const AnimatedNavbar = styled(Nav)`
+  /* Add animation styles here */
+  background: linear-gradient(
+    to right,
+    #ff0000,
+    #00ff00,
+    #0000ff
+  ); /* Same gradient as logo */
+  background-size: 200% 200%; /* Adjust the size of the gradient */
+  animation: gradientAnimation 5s infinite alternate;
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -50,18 +71,19 @@ export const NavLink = styled(Link)`
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 15px;
+  font-size: 17px;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 40%;
+
   &:hover {
     transition: all 0.1s ease-in-out;
-    color: #808080;
+    color: green;
+    font-size: 20px; /* Increase font size on hover */
   }
 `;
-
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
@@ -72,29 +94,14 @@ export const NavBtn = styled.nav`
   align-items: center;
 `;
 
-export const NavBtnLink = styled(Link)`
-  background: #3498db; /* Button background color */
-  color: #ecf0f1; /* Button text color */
-  font-family: "Figtree", sans-serif;
-  font-size: 16px;
-  padding: 10px 22px;
-  border-radius: 4px;
-  margin-left: 20px; /* Add space between buttons */
-  margin-right: 10px; /* Add margin to the right */
-  text-decoration: none;
-  transition: background 0.2s ease-in-out; /* Added smooth transition */
-  &:hover {
-    background: #2980b9; /* Button hover background color */
-  }
-`;
-
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-left: 180px;
 `;
 
 export const Icon = styled(SearchIcon)`
-  color: #fff;
+  color: black;
   transition: transform 0.3s ease-in-out;
   margin-left: 5px;
   &:hover {
@@ -104,7 +111,7 @@ export const Icon = styled(SearchIcon)`
 
 export const SearchInput = styled.input`
   padding: 5px; /* Adjust the padding of the input */
-  border: 1px solid #ccc; /* Add border */
+  border: 1px solid black; /* Add border */
   border-radius: 10px; /* Add border radius */
   font-size: 16px; /* Adjust the font size of the text */
   color: black; /* Set text color */

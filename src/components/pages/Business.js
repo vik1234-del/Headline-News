@@ -1,43 +1,44 @@
-import React, { useEffect, useState, CSSProperties } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import NewsItem from "../NewsItem"; // Ensure the correct import path
-import ClockLoader from "react-spinners/ClipLoader";
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); // Adjust the min-width as needed
+  gap: 16px; // Space between grid items
+  padding: 16px; // Padding around the grid
 `;
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-};
 
-const Home = () => {
+const Business = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const url = "https://eventregistry.org/api/v1/article/getArticles";
-        const data = {
-          query: {
-            $query: {
-              dateStart: "2024-05-13",
-              dateEnd: "2024-05-20",
+    const url = "https://eventregistry.org/api/v1/article/getArticles";
+    const data = {
+      query: {
+        $query: {
+          $and: [
+            {
+              categoryUri: "news/Business",
             },
-            $filter: {
-              forceMaxDataTimeWindow: "31",
-            },
-          },
-          resultType: "articles",
-          articlesSortBy: "rel",
-          apiKey: "9269ec65-21db-4a48-80be-879354a41097",
-        };
+          ],
+        },
+        $filter: {
+          forceMaxDataTimeWindow: "31",
+        },
+      },
+      resultType: "articles",
+      articlesSortBy: "date",
+      apiKey: "9269ec65-21db-4a48-80be-879354a41097",
+    };
 
+    const getArticles = async () => {
+      try {
         const response = await fetch(url, {
           method: "POST",
           headers: {
@@ -62,20 +63,11 @@ const Home = () => {
       }
     };
 
-    fetchData();
+    getArticles();
   }, []);
 
   if (loading) {
-    return (
-      <ClockLoader
-        loading={loading}
-        cssOverride={override}
-        size={70}
-        color="#36d7b7"
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
-    );
+    return <div>Loading...</div>;
   }
 
   if (error) {
@@ -103,4 +95,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Business;

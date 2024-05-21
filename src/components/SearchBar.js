@@ -1,11 +1,13 @@
-// Search.js
 import React from "react";
 import { SearchInput, SearchContainer } from "./NavbarElements";
-import { Icon } from "./NavbarElements";
-import { useSearchContext } from "./SearchContext"; // Import the useSearchContext hook
+import { useSearchContext } from "./SearchContext";
 
 const Search = () => {
-  const { searchKeyword, setSearchKeyword } = useSearchContext(); // Access search keyword state and setter function
+  const { searchKeyword, setSearchKeyword } = useSearchContext();
+
+  const handleInputChange = (e) => {
+    setSearchKeyword(e.target.value);
+  };
 
   return (
     <SearchContainer>
@@ -13,9 +15,9 @@ const Search = () => {
         type="text"
         placeholder="Search"
         value={searchKeyword}
-        onChange={(e) => setSearchKeyword(e.target.value)}
+        onChange={handleInputChange}
       />
-      <Icon />
+      {/* You can add other search-related elements here */}
     </SearchContainer>
   );
 };

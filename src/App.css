@@ -11,4 +11,37 @@
   font-size: 100%;
   vertical-align: baseline;
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 
+  background-size: 200% 200%; /* Adjust the size of the gradient */
+  animation: gradientAnimation 5s infinite alternate;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Align horizontally */
+  align-items: center; /* Align vertically */
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.logo {
+  max-width: 150px; /* Adjust the size as needed */
+  height: auto;
+}
+
+/* Add your gradient styles */
+.logo-container {
+  background-color: white;
+  background-size: 200% 200%; /* Adjust the size of the gradient */
+  animation: gradientAnimation 5s infinite alternate;
+}

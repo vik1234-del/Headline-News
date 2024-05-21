@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Nav,
+  AnimatedNavbar,
   NavLink,
   NavMenu,
   NavBtn,
@@ -10,7 +10,8 @@ import {
   Home,
   Politics,
   Business,
-  Health,
+  Lifestyle,
+  SearchContainer,
 } from "./NavbarElements";
 
 import Search from "./SearchBar";
@@ -19,44 +20,44 @@ import { SearchProvider } from "./SearchContext"; // Import the SearchProvider
 const Navbar = () => {
   return (
     <>
-      <Nav>
+      <AnimatedNavbar>
         <NavMenu>
           <NavLink to="/" activestyle>
             <Home />
             Home
           </NavLink>
-          <NavLink to="/National" activestyle>
+          <NavLink to="/Nigerian" activestyle>
             <Flag />
             Nigerian
           </NavLink>
-          <NavLink activestyle>
+          <NavLink to="/Environment" activestyle>
             <WorldIcon />
             Environment
           </NavLink>
-          <NavLink activestyle>
+          <NavLink to="/Politics" activestyle>
             <Politics />
             Politics
           </NavLink>
-          <NavLink activestyle>
+          <NavLink to="/Business" activestyle>
             <Business />
             Business
           </NavLink>
-          <NavLink activeStyle>
-            <Health />
-            Health
+          <NavLink to="/Entertainment" activeStyle>
+            <Lifestyle />
+            Entertainment
           </NavLink>
-          <NavLink activeStyle>
+          <SearchContainer>
             {/* Wrap the Search component with SearchProvider */}
             <SearchProvider>
               <Search />
             </SearchProvider>
-          </NavLink>
+          </SearchContainer>
         </NavMenu>
-        <NavBtn>
+        {/* <NavBtn>
           <NavBtnLink>Sign In</NavBtnLink>
           <NavBtnLink>Sign Up</NavBtnLink>
-        </NavBtn>
-      </Nav>
+        </NavBtn> */}
+      </AnimatedNavbar>
     </>
   );
 };
