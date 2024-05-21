@@ -9,10 +9,6 @@ const GridContainer = styled.div`
   gap: 16px;
   padding: 16px;
 `;
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-};
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
@@ -69,7 +65,6 @@ const Home = () => {
     return (
       <ClockLoader
         loading={loading}
-        cssOverride={override}
         size={70}
         color="#36d7b7"
         aria-label="Loading Spinner"
